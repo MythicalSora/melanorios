@@ -4,5 +4,8 @@
     "description": "The Norija RP exclusive bot !",
     "main": "bot.js",
     "author": "MythicalSora ! (Or Mitsuki of the Brotherhood)",
-    "dependencies": {}
+    "dependencies": {
+        "discord.js": "^11.2.1",
+        "moments": "^0.0.2"
+    }
 }
