@@ -6,7 +6,9 @@
     "author": "MythicalSora ! (Or Mitsuki of the Brotherhood)",
     "dependencies": {
         "discord.js": "^11.2.1",
+        "global": "^4.3.2",
         "moments": "^0.0.2",
-        "mysql": "^2.15.0"
+        "mysql": "^2.15.0",
+        "nodemon": "^1.14.7"
     }
 }
