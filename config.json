@@ -1,4 +1,11 @@
-{ "token"  : "Mzk3MDAxMDc3MDg3Nzk3MjQ4.DSpnkw.UVV6Pehn74pYfEDcN5-O4RiqczE",
-    "prefix" : "n!",
-    "developer"   : "266286800950132736"
+{
+    "token": "Mzk3MDAxMDc3MDg3Nzk3MjQ4.DSpnkw.UVV6Pehn74pYfEDcN5-O4RiqczE",
+    "prefix": "n!",
+    "developer": "266286800950132736",
+    "mysql": {
+        "host": "localhost",
+        "user": "root",
+        "password": "M3ijb00m!",
+        "database": "economy"
+    }
 }
