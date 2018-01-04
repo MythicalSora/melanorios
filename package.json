@@ -1,0 +1,8 @@
+{
+    "name": "Norija",
+    "version": "1.0.0",
+    "description": "The Norija RP exclusive bot !",
+    "main": "bot.js",
+    "author": "MythicalSora ! (Or Mitsuki of the Brotherhood)",
+    "dependencies": {}
+}
