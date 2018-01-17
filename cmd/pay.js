@@ -2,15 +2,9 @@ const Command = require('../lib/command');
 const moment = require('moment');
 const time = moment().format('MMM Do h:mma');
 
-class SetBalance extends Command {
+class pay extends Command {
     run(user, amount) {
-
-        if (!this.hasRole('Staff')) {
-            this.message.reply('You don\'t have perms, scrub').catch(console.error);
-        } else {
-            let player = this.player();
-
-            if (!!player) {
+            if (!!this.player()) {
                 if (!amount) {
                     return this.message.channel.send({
                         embed: {
@@ -22,28 +16,38 @@ class SetBalance extends Command {
 
                 this.conn.query(`
                     UPDATE users
-                        SET balance = ${parseInt(amount)}
+                        SET balance = balance + ${parseInt(amount)}
                     WHERE
                         guild_id = ${this.message.guild.id} AND
-                        user_id = ${player.id}
+                        user_id = ${this.player().id}
                 `, (error, results, fields) => {
                     if (!error) {
                         this.message.channel.send({
                             embed: {
                                 color: 433243,
-                                description: `I have set users balance to $${amount}.`
+                                description: `You've succesfully payed ${this.player()} $${amount}.`
                             }
                         });
+
+                        this.conn.query(`
+                        UPDATE users
+                            SET balance = balance - ${parseInt(amount)}
+                        WHERE
+                            guild_id = ${this.message.guild.id} AND
+                            user_id = ${this.message.author.id}
+                    `, (error, results, fields) => {
+                        if (!error) {
+                            console.log("A transaction has been made");
+                            }});
                     } else {
-                        this.throwError('Failed to set user balance', error);
+                        this.throwError('Failed to transfer currency', error);
                     }
                 });
-            } else {
+            } else if (!user) {
                 this.throwError('No arguments: `user`');
             }
     
         }
     }
-}
 
-module.exports = SetBalance;
+module.exports = pay;

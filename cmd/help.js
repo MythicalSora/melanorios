@@ -1,39 +1,44 @@
 const moment = require('moment');
 const time = moment().format('MMM Do h:mma');
-exports.run = async (client, message, args) => {
+const Command = require('../lib/command');
+class help extends Command {
+  run() {
     console.log("[" + time + "]" + " n!help has been used");
-message.channel.send({embed: {
+this.message.channel.send({embed: {
   color: 3447003,
   author: {
-    name: client.user.username,
-    icon_url: client.user.avatarURL
+    name: this.client.user.username,
+    icon_url: this.client.user.avatarURL
   },
   title: "Help",
   description: "Here you can find the commands we have so far !",
   fields: [{
-      name: "n!help",
+      name: "m!help",
       value: "This command displays this message. What else did you expect ?"
     },
     {
-      name: "n!ping",
+      name: "m!ping",
       value: "This command displays the current ping"
     },
     {
-      name: "n!kick <user>",
+      name: "m!kick <user>",
       value: "This command kicks a user from this server"
     },
     {
-      name: "n!ban <user>",
+      name: "m!ban <user>",
       value: "This command bans a user from this server"
     },
     {
-      name: "n!purge",
+      name: "m!purge",
       value: "Should delete the given amount of messages"
     }          
   ],
   timestamp: new Date(),
   footer: {
-    text: "© MythicalSora"
+    text: "© Myth#2065"
   }
 }});
+  }
 }
+
+module.exports = help;

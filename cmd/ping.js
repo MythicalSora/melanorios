@@ -1,8 +1,12 @@
 const moment = require('moment');
 const time = moment().format('MMM Do h:mma');
-exports.run = async (client, message, [mention, ...reason]) => {
-        console.log("[" + time + "]" + " n!ping has been used");
+const Command = require('../lib/command');
+class ping extends Command {
+  run() {
+    this.message.channel.send('calculating...').then(message => {
+        this.message.channel.send(`Ping: ${message.createdTimestamp - this.message.createdTimestamp}ms`);
+        message.delete();
+    })
+}};
 
-        const m = await message.channel.send("Uhm... Let me see...");
-        m.edit(`Ping: ${m.createdTimestamp - message.createdTimestamp}ms`);
-};
+module.exports = ping;  
