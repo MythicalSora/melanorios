@@ -1,11 +1,15 @@
 {
-    "name": "Norija",
+    "name": "Norjia",
     "version": "1.0.0",
-    "description": "The Norija RP exclusive bot !",
+    "description": "The Norjia RP exclusive bot !",
     "main": "bot.js",
     "author": "MythicalSora ! (Or Mitsuki of the Brotherhood)",
     "dependencies": {
         "discord.js": "^11.2.1",
-        "moments": "^0.0.2"
+        "global": "^4.3.2",
+        "moments": "0.0.2",
+        "mysql": "^2.15.0",
+        "nodemon": "^1.14.7",
+        "yarn": "^1.3.2"
     }
 }
