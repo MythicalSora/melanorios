@@ -35,6 +35,8 @@ client.on('message', message => {
 
 client.login(config.token);
 
+//Kuga you're gay
+
 process.on('exit', () => {
   conn.end();
 });
