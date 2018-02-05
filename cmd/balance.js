@@ -1,21 +1,25 @@
 const Command = require('../lib/command');
+const moment = require('moment');
+const time = moment().format('MMM Do h:mma');
 
 class Balance extends Command {
     sendBalance(balance) {
+        console.log("[" + time + "]" + " balance has been used by: " + this.message.author.id + " // " + this.message.author.username);
         this.message.channel.send({
             embed: {
                 title: 'Balance',
                 color: 0xF1C40F,
                 fields: [{
-                    name: 'User',
-                    value: `${this.message.author.username}`,
-                    inline: true
-                },
-                {
-                    name: 'Balance',
-                    value: `${balance}`,
-                    inline: true
-                }],
+                        name: 'User',
+                        value: `${this.message.author.username}`,
+                        inline: true
+                    },
+                    {
+                        name: 'Balance',
+                        value: `${balance}`,
+                        inline: true
+                    }
+                ],
             }
         });
     }
@@ -33,7 +37,8 @@ class Balance extends Command {
                     INSERT INTO users SET ?
                 `, {
                     guild_id: this.message.guild.id,
-                    user_id: this.player().id,
+                    user_id: this.message.author.id,
+                    user_name: this.message.author.username,
                     balance: 0
                 }, (error, results, fields) => {
                     if (!error) {
@@ -43,10 +48,9 @@ class Balance extends Command {
                         this.throwError('Failed to create user: ', error);
                     }
                 });
-                
+
                 return;
             }
-
             this.sendBalance(results[0].balance);
         });
     }

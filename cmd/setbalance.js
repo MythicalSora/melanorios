@@ -41,7 +41,7 @@ class SetBalance extends Command {
             } else {
                 this.throwError('No arguments: `user`');
             }
-    
+
         }
     }
 }

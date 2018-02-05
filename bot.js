@@ -1,6 +1,4 @@
 const Discord = require('discord.js');
-const moment = require('moment');
-const time = moment().format('MMM Do h:mma');
 const client = new Discord.Client();
 const mysql = require('mysql');
 const process = require('process');
@@ -14,7 +12,7 @@ client.on('ready', () => {
   // This event will run if the bot starts, and logs in, successfully.
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 
-  client.user.setGame(`Woow! New update!`);
+  client.user.setGame(`Wrestle with Jeff, prepare for Death`);
 });
 
 client.on('message', message => {
@@ -27,7 +25,7 @@ client.on('message', message => {
   // The list of if/else is replaced with those simple 2 lines:
   try {
     let Command = require(`./cmd/${command}.js`),
-        cmd = new Command(conn, client, message);
+      cmd = new Command(conn, client, message);
 
     cmd.run.apply(cmd, args);
   } catch (err) {

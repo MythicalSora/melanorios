@@ -3,41 +3,59 @@ const time = moment().format('MMM Do h:mma');
 const Command = require('../lib/command');
 class help extends Command {
   run() {
-    console.log("[" + time + "]" + " n!help has been used");
-this.message.channel.send({embed: {
-  color: 3447003,
-  author: {
-    name: this.client.user.username,
-    icon_url: this.client.user.avatarURL
-  },
-  title: "Help",
-  description: "Here you can find the commands we have so far !",
-  fields: [{
-      name: "m!help",
-      value: "This command displays this message. What else did you expect ?"
-    },
-    {
-      name: "m!ping",
-      value: "This command displays the current ping"
-    },
-    {
-      name: "m!kick <user>",
-      value: "This command kicks a user from this server"
-    },
-    {
-      name: "m!ban <user>",
-      value: "This command bans a user from this server"
-    },
-    {
-      name: "m!purge",
-      value: "Should delete the given amount of messages"
-    }          
-  ],
-  timestamp: new Date(),
-  footer: {
-    text: "© Myth#2065"
-  }
-}});
+    console.log("[" + time + "]" + " help has been used by: " + this.message.author.id + " // " + this.message.author.username);
+    this.message.channel.send({
+      embed: {
+        color: 3447003,
+        author: {
+          name: this.client.user.username,
+          icon_url: this.client.user.avatarURL
+        },
+        title: "Help",
+        description: "Here you can find the commands we have so far !",
+        fields: [{
+            name: "m!help",
+            value: "This command displays this message. What else did you expect ?"
+          },
+          {
+            name: "m!ping",
+            value: "Displays the current ping"
+          },
+          {
+            name: "m!kick <user>",
+            value: "Kicks a person from the server"
+          },
+          {
+            name: "m!ban <user>",
+            value: "Bans a user from the server"
+          },
+          {
+            name: "m!purge",
+            value: "Deletes the given amount of messages"
+          },
+          {
+            name: "m!balance",
+            value: "Displays the amount of money you currently have"
+          },
+          {
+            name: "m!setbalance <player> <amount>",
+            value: "Changes a user's balance"
+          },
+          {
+            name: "m!pay <player> <amount>",
+            value: "Pay the user a specified amount of money"
+          },
+          {
+            name: "m!daily",
+            value: "Logs the use, still in development"
+          }
+        ],
+        timestamp: new Date(),
+        footer: {
+          text: "© Myth#2065"
+        }
+      }
+    });
   }
 }
 
