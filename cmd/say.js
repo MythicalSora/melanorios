@@ -9,9 +9,9 @@ class say extends Command {
     } else {
 
       console.log("[" + time + "]" + " n!say has been used");
-      // To get the "message" itself we join the `args` back into a string with spaces: 
+
       this.message.delete().catch(O_o => {});
-      // And we get the bot to say the thing: 
+
       this.message.channel.send(Array.prototype.slice.call(arguments).join(' '));
 
     }
