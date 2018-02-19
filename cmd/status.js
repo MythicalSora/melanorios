@@ -4,7 +4,8 @@ const Command = require('../lib/command');
 const fs = require("fs")
 const config = require("../config.json")
 class Status extends Command {
-  run(newStatus) {
+  run() {
+    let newStatus = Array.prototype.slice.call(arguments).join(' ');
     console.log("[" + time + "]" + " Michael has changed the status to: " + newStatus);
     if (this.message.author.id !== "266286800950132736") return;
 
