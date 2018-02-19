@@ -12,7 +12,7 @@ client.on('ready', () => {
   // This event will run if the bot starts, and logs in, successfully.
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 
-  client.user.setGame(`Wrestle with Jeff, prepare for Death`);
+  client.user.setActivity(config.status);
 });
 
 client.on('message', message => {
