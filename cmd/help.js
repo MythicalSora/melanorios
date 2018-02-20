@@ -48,7 +48,28 @@ class help extends Command {
           {
             name: "m!daily",
             value: "Logs the use, still in development"
+          },
+          {
+            name: "m!gorillaz <song>",
+            value: "Choose a gorillaz song from the following albums: Gorillaz / Demon Days / Humanz"
+          },
+          {
+            name: "m!leave",
+            value: "Make the bot leave the VC after you're done."
+          },
+          {
+            name: "m!name <name>",
+            value: "Developers can change the bot's username"
+          },
+          {
+            name: "m!status <status>",
+            value: "Developers can change the bot's 'Playing: '"
+          },
+          {
+            name: "m!avatar <url>",
+            value: "Developers can change the bot's Avatar"
           }
+
         ],
         timestamp: new Date(),
         footer: {
