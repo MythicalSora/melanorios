@@ -1,9 +1,9 @@
 {
-    "name": "mistavia",
-    "version": "1.0.0",
-    "description": "The Norjia RP exclusive bot !",
+    "name": "melanorios",
+    "version": "2.1.3",
+    "description": "Aphicaster RP Central's Official Discord Bot",
     "main": "bot.js",
-    "author": "MythicalSora ! (Or Mitsuki of the Brotherhood)",
+    "author": "The Legend of Sora! (https://www.github.com/mythicalsora)",
     "dependencies": {
         "date-diff": "^0.1.3",
         "discord.js": "^11.3.0",
