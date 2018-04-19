@@ -27,14 +27,14 @@ class Balance extends Command {
     run() {
         this.conn.query(`
             SELECT *
-            FROM users
+            FROM aphi
             WHERE
                 guild_id = '${this.message.guild.id}' AND
                 user_id = '${this.message.author.id}'
         `, (error, results, fields) => {
             if (results.length === 0) {
                 this.conn.query(`
-                    INSERT INTO users SET ?
+                    INSERT INTO aphi SET ?
                 `, {
                     guild_id: this.message.guild.id,
                     user_id: this.message.author.id,

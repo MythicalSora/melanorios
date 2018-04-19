@@ -21,7 +21,7 @@ class SetBalance extends Command {
                 }
 
                 this.conn.query(`
-                    UPDATE users
+                    UPDATE aphi
                         SET balance = ${parseInt(amount)}
                     WHERE
                         guild_id = ${this.message.guild.id} AND
