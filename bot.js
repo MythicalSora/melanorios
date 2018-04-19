@@ -5,11 +5,11 @@ const process = require('process');
 const config = require('./config.json');
 
 let conn = mysql.createConnection({
+  insecureAuth : true,
   host : config.mysql.host,
   user : config.mysql.user,
   password : config.mysql.password,
-  database : config.mysql.database,
-  insecureAuth : true
+  database : config.mysql.database
 });
 
 conn.connect();
