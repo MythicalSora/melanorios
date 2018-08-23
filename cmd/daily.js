@@ -33,7 +33,7 @@ class Daily extends Command {
         //     }, (error, results, fields) => {
         //         const date1 = `${datetime}`
         //         const date2 = new Date();
-                
+
         //         var diff = new DateDiff(date1, date2);
 
         //         if(diff.hours() == -24 || diff.hours() < -24) {
@@ -70,10 +70,10 @@ class Daily extends Command {
         //             `, (error, results, fields) => {
         //                 console.log('Old entry removed from DB')
         //             }
-                
+
         //         )
         //         };
-            
+
         //     })
         this.message.reply("this function has been disabled.");
     }

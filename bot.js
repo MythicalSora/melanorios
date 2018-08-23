@@ -5,30 +5,28 @@ const process = require('process');
 const config = require('./config.json');
 
 let conn = mysql.createConnection({
-  insecureAuth : true,
-  host : config.mysql.host,
-  user : config.mysql.user,
-  password : config.mysql.password,
-  database : config.mysql.database
+  insecureAuth: true,
+  host: config.mysql.host,
+  user: config.mysql.user,
+  password: config.mysql.password,
+  database: config.mysql.database
 });
 
 conn.connect();
 
 client.on('ready', () => {
-  // This event will run if the bot starts, and logs in, successfully.
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
+  client.channels.get('451079519500238871').send(`Melanorios has been succesfully attached to server: ${message.guild.id}`)
 
-  client.user.setActivity(config.status);
+  client.user.setActivity('The New Updates');
 });
 
 client.on('message', message => {
   if (message.author.bot || message.content.indexOf(config.prefix) !== 0) return;
 
-  // This is the best way to define args. Trust me.
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  // The list of if/else is replaced with those simple 2 lines:
   try {
     let Command = require(`./cmd/${command}.js`),
       cmd = new Command(conn, client, message);

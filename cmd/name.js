@@ -15,4 +15,3 @@ class Name extends Command {
 };
 
 module.exports = Name;
-

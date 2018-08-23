@@ -37,7 +37,7 @@ class Pay extends Command {
                             user_id = ${this.message.author.id}
                     `, (error, results, fields) => {
                         if (!error) {
-                            console.log("[" + time + "]" + this.message.author.username + " (" + this.message.author.id + ")" + " has transfered " + amount + " to account "+ this.player().id);
+                            console.log("[" + time + "]" + this.message.author.username + " (" + this.message.author.id + ")" + " has transfered " + amount + " to account " + this.player().id);
                         }
                     });
                 } else {

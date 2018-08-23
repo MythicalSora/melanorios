@@ -1,4 +1,4 @@
-const moment = require('moment');
+  const moment = require('moment');
 const time = moment().format('MMM Do h:mma');
 const Command = require('../lib/command');
 class say extends Command {
